@@ -1,0 +1,109 @@
+//convert word to number
+#include <iostream>
+
+#include <string>
+#include <map>
+using namespace std;
+
+string getPhoneNumber(string s) {
+    if (s.size()==0) {
+        return 0;
+    }
+
+    map<std::string,string> mymap = {
+        {
+            "zero" , "0"
+        },
+                { "one", "1" },
+                { "two", "2" },
+                { "three", "3" },
+                {
+                   "four", "4"
+                },
+                {
+                    "five", "5"
+                },
+                {
+                    "six", "6"
+                },
+                {
+
+                    "seven", "7"
+                },
+                {
+                  "eight", "8"
+                },
+                {
+                    "nine", "9"
+                }
+            };
+
+    string tempString, number;
+    int stringSize = s.size(),
+        counter=0,
+        initial=0;
+    for (int i=0; i <= stringSize; i++) {
+
+        if (i==stringSize) {
+            tempString = s.substr(initial, counter);
+            number.append(mymap.at(tempString));
+        }
+
+        if(s[i]!=' ') {
+            counter++;
+        }
+        else if (s[i]==' ') {
+
+            tempString = s.substr(initial, counter);
+
+            if (tempString=="double") {
+                i++;
+                counter=0;
+                initial = i;
+                while (s[i]!=' ') {
+                    counter++;
+                    i++;
+                }
+                tempString = s.substr(initial, counter);
+                initial+=(counter+1);
+                counter=0;
+                number.append(mymap.at(tempString));
+                number.append(mymap.at(tempString));
+
+            }
+            else if (tempString=="triple") {
+                i++;
+                counter=0;
+                initial = i;
+                while (s[i]!=' ') {
+                    counter++;
+                    i++;
+                }
+                tempString = s.substr(initial, counter);
+                initial+=(counter+1);
+                counter=0;
+                number.append(mymap.at(tempString));
+                number.append(mymap.at(tempString));
+                number.append(mymap.at(tempString));
+            }
+            else {
+                number.append(mymap.at(tempString));
+                initial = i+1;
+                counter = 0;
+            }
+
+        }
+
+    }
+return number;
+}
+
+int main()
+{
+string s = "double eight three seven three one double nine eight zero";
+
+string temp = getPhoneNumber(s);
+cout<<temp;
+
+    return 0;
+}
