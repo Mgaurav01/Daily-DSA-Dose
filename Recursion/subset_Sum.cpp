@@ -2,6 +2,7 @@
 using namespace std; 
 
 /*
+link:https://www.youtube.com/watch?v=rYkfBRtMJr8
 EXPLAIN 
 Input:
 N = 2
