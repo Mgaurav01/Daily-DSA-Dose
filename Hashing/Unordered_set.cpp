@@ -48,3 +48,54 @@ int main(){
     else
         cout<<"not found"<<endl;
 }
+///////////////////////////////////////////////////// USING STRING ////////////////////////////////////////////////////////////////////////////
+/*
+int main()
+{
+    unordered_set<string>s;
+    s.insert("hello");
+    s.insert("hi");
+    s.insert("TATA");
+    s.insert("Khatam");
+    s.insert("Bye");
+    
+    for(auto it = s.begin() ; it != s.end() ; it++)
+    {
+        cout<<(*it)<<endl;
+    }
+    cout<<"number of element :- "<<s.size();
+
+    // s.clear();
+
+    //  cout<<"number of element :- "<<s.size();
+    // cout<<endl;
+    string key = "hi";
+
+    // if(s.find(key) == s.end())
+    // {
+    //     cout<<"NOT FOUND !!";
+    // }
+    // else
+    // {
+    //     auto temp = s.find(key);
+    //     s.erase(temp);
+    // }
+    string deleted_key = "hello";
+    s.erase(deleted_key);
+
+    for(auto it = s.begin() ; it!=s.end() ;it++)
+        cout<<(*it)<<endl;
+
+    cout<<"number of element : "<<s.size()<<endl;
+
+    if(s.find(key)!=s.end())
+        cout<<"key found"<<endl;
+
+
+    if(s.count("TATA"))
+        cout<<"key found"<<endl;
+    else
+        cout<<"not found"<<endl;
+
+}
+*/
