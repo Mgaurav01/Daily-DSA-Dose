@@ -4,6 +4,12 @@
 using namespace std;
 /*
 
+Input:
+N = 6, X = 16
+Arr[] = {1, 4, 45, 6, 10, 8}
+Output: Yes
+Explanation: Arr[3] + Arr[4] = 6 + 10 = 16
+
 */
 
  // } Driver Code Ends
