@@ -7,42 +7,46 @@ using namespace std;
  // } Driver Code Ends
 //User function template for C++
 /*
-
+                                                    I/P O/P
 Example 1:
 
-Input:
-S = "aabacbebebe", K = 3
-Output: 7
-Explanation: "cbebebe" is the longest 
-substring with K distinct characters.
+Input: s = "abcabcbb"
+Output: 3
+Explanation: The answer is "abc", with the length of 3.
 Example 2:
 
-Input: 
-S = "aaaa", K = 2
-Output: -1
-Explanation: There's no substring with K
-distinct characters.
+Input: s = "bbbbb"
+Output: 1
+Explanation: The answer is "b", with the length of 1.
+Example 3:
 
+Input: s = "pwwkew"
+Output: 3
+Explanation: The answer is "wke", with the length of 3.
+Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
+ 
+ 
 */
+
 class Solution{
   public:
     int longestKSubstr(string s, int k) {
     // your code here
     unordered_map<char,int>mp;
-    int i=0,j=0,maxi=-1;
-   
+     int i=0,j=0,maxi=-1;
+     if(s.length()==0)
+            return 0;
     while(j < s.size()){
         mp[s[j]]++;
-        if(mp.size() < k)
-            j++;
-        else if(mp.size()==k)
+       
+        if(mp.size()==j-i+1)
         {
             maxi = max(maxi , j-i+1);
             j++;
         }
-        else if(mp.size() > k)
+        else if(mp.size() <  j-i+1)
         {
-            while(mp.size() > k)
+            while(mp.size() < j-i+1)
             {
                 mp[s[i]]--;
                 if(mp[s[i]]==0)
@@ -57,6 +61,7 @@ class Solution{
     return maxi;
     }
 };
+
 
 // { Driver Code Starts.
 int main() {
