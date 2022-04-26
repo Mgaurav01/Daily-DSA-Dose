@@ -27,7 +27,7 @@ class Solution
         ans.push_back(minh.top());
         minh.pop();
       }
-      reverse(ans.begin(), ans.end()); //Asper question!
+      reverse(ans.begin(), ans.end()); //Asper question
       return ans;
 }
 };
