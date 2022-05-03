@@ -3,10 +3,11 @@
 using namespace std;
 
 struct node {
-  int data;
+  int data; //root
   struct node * left, * right;
 };
 
+//Iterative approch
 vector < int > preOrderTrav(node * curr) {
   vector < int > preOrder;
   if (curr == NULL)
@@ -27,6 +28,18 @@ vector < int > preOrderTrav(node * curr) {
   return preOrder;
 
 }
+ 
+/*
+RECURSION APPROCH!!!
+struct node * newNode(int data) {
+  struct node * node = (struct node * ) malloc(sizeof(struct node));
+  node -> data = data;
+  node -> left = NULL;
+  node -> right = NULL;
+
+  return (node);
+}
+*/ 
 
 struct node * newNode(int data) {
   struct node * node = (struct node * ) malloc(sizeof(struct node));
