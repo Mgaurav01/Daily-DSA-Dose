@@ -1,3 +1,4 @@
+//copied from Ajna Link:- https://leetcode.com/problems/merge-two-binary-trees/discuss/830358/C%2B%2B-Recursive-DFS-Solution-Explained-~80-Time-~40-Space
 /*
 Core idea here: we merge the 2 trees in place, using t1 as a base (unless it is empty, in which case we just return t2) and summing the values when both have a node present in the same position, recursively calling a dfs helper function to traverse the trees.
 
