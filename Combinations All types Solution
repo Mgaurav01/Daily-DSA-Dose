@@ -1,0 +1,112 @@
+<LEETCODE>
+77. Combinations
+
+class Solution {
+    public List<List<Integer>> combine(int n, int k) {
+        List<List<Integer>> res = new ArrayList<>();
+        solve(1, k, n, new ArrayList<>(), res);
+        return res;
+    }
+    public void solve(int start, int k, int n, List<Integer> temp, List<List<Integer>> res){
+        if(temp.size() == k){
+            res.add(new ArrayList<>(temp));
+            return;
+        }
+        for(int i = start; i <= n; i++){
+            temp.add(i);
+            solve(i + 1, k, n, temp, res);
+            temp.remove(temp.size() - 1);
+        }
+    }
+}
+ANALYSIS :-
+Time/Space complexity:
+
+First if in combine will be called exactly c(n, k) times, which is a binomial coefficient - number of ways you can pick k elements from set of sizen. Then it has to perform k size job, of creating new result entry. Time complexity - O(k * c(n, k)).
+For loop fragment, will be called exactly c(n, k - 1) times and (in improved solution which only iterates on i <= n - k + 1) there will ben/k iterations on average. Time complexity - O(n/k * c(n, k - 1)) .
+
+Final time complexity :- O(k * c(n, k)) + O(n/k * c(n, k - 1))) = O(k * c(n, k))
+
+Space complexity :- O(k * c(n, k)) - if we exclude the result collection it will be O(k).
+
+216. Combination Sum III
+
+class Solution {
+    public List<List<Integer>> combinationSum3(int k, int n) {
+        List<List<Integer>> res = new ArrayList<>();
+        solve(1, k, n, new ArrayList<>(), res);
+        return res;
+    }
+    public void solve(int start, int k, int n, List<Integer> temp, List<List<Integer>> res){
+        if(n == 0 && temp.size() == k){
+            res.add(new ArrayList<>(temp));
+        }
+        for(int i = start; i <= 9; i++){
+            temp.add(i);
+            solve(i + 1, k, n - i, temp, res);
+            temp.remove(temp.size() - 1);
+        }
+    }
+}
+ANALYSIS :-
+
+Time Complexity :- O(K * 9^K)
+
+Space Complexity :- O(K)
+
+39. Combination Sum
+
+class Solution {
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+        List<List<Integer>> res = new ArrayList<>();
+        solve(0, candidates, target, new ArrayList<>(), res);
+        return res;
+    }
+    public void solve(int start, int nums[], int target, List<Integer> temp, List<List<Integer>> res){
+        if(target == 0){
+            res.add(new ArrayList<>(temp));
+            return;
+        }
+        if(target > 0){
+            for(int i = start; i < nums.length; i++){
+                temp.add(nums[i]);
+                solve(i, nums, target - nums[i], temp, res);
+                temp.remove(temp.size() - 1);
+            }
+        }
+    }
+}
+ANALYSIS :-
+
+Time complexity :- O(len(nums)^target) or O(N^M)
+
+Space Complexity :- O(length of longest combination)
+
+40. Combination Sum II
+
+class Solution {
+    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+        Arrays.sort(candidates);
+        List<List<Integer>> res = new ArrayList<>();
+        solve(0, candidates, target, new ArrayList<>(), res);
+        return res;
+    }
+    public void solve(int start, int nums[], int target, List<Integer> temp, List<List<Integer>> res){
+        if(target == 0){
+            res.add(new ArrayList<>(temp));
+            return;
+        }
+        if(target > 0){
+            for(int i = start; i < nums.length; i++){
+                if(i > start && nums[i] == nums[i - 1]) continue;
+                temp.add(nums[i]);
+                solve(i + 1, nums, target - nums[i], temp, res);
+                temp.remove(temp.size() - 1);
+            }
+        }
+    }
+}
+ANALYSIS :-
+
+Time complexity :- O(N x 2^N)
+
