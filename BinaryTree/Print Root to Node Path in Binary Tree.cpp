@@ -1,4 +1,6 @@
 /*
+TC -> 0(N)
+SC -> 0(Height)
 class solution{
     public:
      bool getPath(TreeNode *root , vector<int> & arr ,int x)
