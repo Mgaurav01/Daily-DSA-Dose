@@ -1,4 +1,4 @@
-class MyHashSet {
+/*class MyHashSet {
 public:
     vector<int> m;
     int size ;
@@ -21,7 +21,7 @@ public:
     }
 };
 
-/**
+
  * Your MyHashSet object will be instantiated and called as such:
  * MyHashSet* obj = new MyHashSet();
  * obj->add(key);
