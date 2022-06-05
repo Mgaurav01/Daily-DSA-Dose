@@ -1,3 +1,4 @@
+//https://leetcode.com/problems/rotate-list/discuss/1838527/(JAVA-C%2B%2B)-Best-Diagramatic-Explanation
 class Solution {
 public:
     ListNode* rotateRight(ListNode* head, int k) {
