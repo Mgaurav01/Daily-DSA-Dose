@@ -10,7 +10,7 @@ public:
         cur = cur->next;
     }
     cur->next = head;
-    k = count - (k % count);
+    k = count - (k % count); //simple means count - k , we write modulas to avoid time Exceed
     while(k--) cur = cur->next;
     head = cur->next;
     cur->next = NULL;
