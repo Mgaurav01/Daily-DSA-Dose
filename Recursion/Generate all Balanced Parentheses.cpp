@@ -1,8 +1,8 @@
 //leetcode  //MediumLevel
 //https://leetcode.com/problems/generate-parentheses/submissions/
-class Solution {
-public:
-    vector<string> generateParenthesis(int n) {
+#include <bits/stdc++.h>
+using namespace std;
+ vector<string> generateParenthesis(int n) {
         vector<string> v;
         int open = n , close = n;
         string op = "";
@@ -30,4 +30,8 @@ public:
         }
     return ;
     }
-};
+int main(){
+    int n ; cin>>n;
+    generateParenthesis(n);
+    return 0;
+}
