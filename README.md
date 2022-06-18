@@ -1,2 +1,2 @@
-﻿Daily-Practice
+﻿Daily-Practice of DSA question
  
