@@ -27,6 +27,12 @@ class Solution {
         //since a connected graph is given, all nodes would get travrsed
         //in one go only, so no need to call dfsfunction on for loop
         //just pass the root-> 0 and that's it!
+        //if for multiple componenet 
+        /*
+            for(int i = 1;i<=V;i++) {
+             if(!vis[i]) dfs(i, vis, adj, storeDfs); 
+            }
+        */
         
         dfs(0,adj,ans,vis);
         return ans;
