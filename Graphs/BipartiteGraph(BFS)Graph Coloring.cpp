@@ -50,3 +50,45 @@ int main() {
 	}
 	return 0;
 }
+///////////////////////////////////////////////LEETCODE///////////////////////////////////////////////////////
+/*class Solution {
+public:
+    bool bipartiteBfs(int src , vector<vector<int>> &graph , vector<int> &color)
+    {
+        color[src] = 1;
+        queue<int>q;
+        q.push(src);
+        while(!q.empty())
+        {
+            int u = q.front();
+            q.pop();
+            
+            for(auto i : graph[u])
+            {
+                if(color[i] == -1)
+                {
+                    color[i] = 1 - color[u];
+                    q.push(i);
+                }
+                else if(color[i] == color[u]) return false;
+            }
+        }
+        return true;
+    }
+    bool isBipartite(vector<vector<int>>& graph) { 
+      int n = graph.size();
+      vector<int> color(n,-1);
+      for(int i=0;i<n;i++)
+      {
+          if(color[i] == -1)
+          {
+              if(!bipartiteBfs(i , graph , color)) 
+              {
+                  return false;
+              }
+          }
+      }
+        return true;
+    }
+};
+*/
