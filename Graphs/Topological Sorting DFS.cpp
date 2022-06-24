@@ -4,39 +4,34 @@ using namespace std;
 
  // } Driver Code Ends
 class Solution
-{   void findtopo(int node , vector<int> &vis , stack<int> &s , vector<int> adj[])
-    {
-        vis[node] = 1;
-        
-        for(auto it : adj[node])
-        {
-            findtopo(it , vis , s , adj);
-        }
-        s.push(node);
+{
+	void findTopoSort(int node, vector < int > & vis, stack < int > & st, vector < int > adj[]) {
+    vis[node] = 1;
+
+    for (auto it: adj[node]) {
+      if (!vis[it]) {
+        findTopoSort(it, vis, st, adj);
+      }
     }
-	
-	public:
-	
-	//Function to return list containing vertices in Topological order. 
-	vector<int> topoSort(int v, vector<int> adj[]) 
-	{
-	    stack<int> st;
-	    vector<int> vis(v , 0);
-	    for(int i=0;i<v;i++)
-	    {
-	        if(!vis[i])
-	        {
-	            findtopo(i , vis , st , adj);
-	        }
-	    }
-	    vector<int> topo;
-	    while(!st.empty())
-	    {
-	        topo.push_back(st.top());
-	        st.pop();
-	    }
-	    return topo;
-	}
+    st.push(node);
+  }
+  public:
+    vector < int > topoSort(int N, vector < int > adj[]) {
+      stack < int > st;
+      vector < int > vis(N, 0);
+      for (int i = 0; i < N; i++) {
+        if (vis[i] == 0) {
+          findTopoSort(i, vis, st, adj);
+        }
+      }
+      vector < int > topo;
+      while (!st.empty()) {
+        topo.push_back(st.top());
+        st.pop();
+      }
+      return topo;
+
+    }
 };
 
 // { Driver Code Starts.
