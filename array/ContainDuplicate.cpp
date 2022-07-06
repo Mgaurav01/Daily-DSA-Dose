@@ -37,3 +37,26 @@ public:
         
     }
 };
+/*
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+    unordered_map<char, int> unmap;
+    for(int i = 0 ; i < s.size() ; i++)
+        unmap[s[i]]++;
+        
+    for(int i = 0 ; i < t.size() ; i++)
+    {
+        char key = t[i];
+        if(unmap.find(key) == unmap.end())
+            return false;
+        if(unmap.at(key) == 1) unmap.erase(key);
+        else{
+            unmap[key]--;
+        }
+        
+    }
+    return unmap.size() == 0;    
+    }
+};
+*/
