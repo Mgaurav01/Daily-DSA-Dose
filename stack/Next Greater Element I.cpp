@@ -10,7 +10,7 @@ void nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
          {
               if(st.size()==0)
               {
-                 mp[nums2[i]]=-1;
+                 mp[nums2[i]]=-1; 
               }
              else if( st.top()>nums2[i] )
                  {
