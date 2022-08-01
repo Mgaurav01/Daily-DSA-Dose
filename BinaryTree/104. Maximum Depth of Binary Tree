@@ -1,4 +1,4 @@
-<h1>BFS</h1> 
+  //BFS 
 class Solution {
 public:
     int maxDepth(TreeNode* root) {
@@ -22,5 +22,19 @@ public:
         }
       }
       return count;
+    }
+};
+
+//Recursion solution
+
+class Solution {
+public:
+    int maxDepth(TreeNode* root) {
+      if(!root) return 0;
+      
+      int left = maxDepth(root->left);
+      int right = maxDepth(root->right);
+      
+      return max(left , right) + 1;
     }
 };
