@@ -1,0 +1,62 @@
+//Tree should have all the node not NULL !
+//Use Level order Traversel BFS
+
+class Solution{
+public:    
+    bool isCompleteBT(Node* root){
+     queue<Node*>q;
+     q.push(root);
+     bool flag = false;
+     while(!q.empty())
+     {
+         int size = q.size();
+         vector<int>l;
+         for(int i = 0 ; i<size ;i++)
+         {
+             Node* node = q.front();
+             q.pop();
+             
+             if(!node){
+                 flag = true;
+                 continue;
+             }
+             if(flag == true)
+                return false;
+            q.push(node->left);
+            q.push(node->right);
+              
+         }
+     }
+     
+     
+     return true;
+    }
+};
+
+//{ Driver Code Starts.
+
+int main()
+{
+    int t;
+    scanf("%d ",&t);
+    while(t--)
+    {
+        string treeString;
+		getline(cin,treeString);
+		Node* root = buildTree(treeString);
+		Solution ob;
+        if(ob.isCompleteBT(root)){
+            printf ("Complete Binary Tree\n");
+        }
+        else{
+            printf ("Not Complete Binary Tree\n");
+        } 
+    }
+    return 0;
+}
+
+
+
+
+
+// } Driver Code Ends
