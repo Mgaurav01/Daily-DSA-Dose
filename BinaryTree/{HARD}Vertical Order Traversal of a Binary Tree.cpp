@@ -8,8 +8,9 @@ struct node {
 };
 
 vector < vector < int >> findVertical(node * root) {
-  map < int, map < int, multiset < int >>> nodes;
-  queue < pair < node * , pair < int, int >>> todo;
+    
+  map < int, map < int, multiset < int >>> nodes; // vertical  , level , multiset of multinode
+  queue < pair < node * , pair < int, int >>> todo; // Root  , vetical , level
   todo.push({
     root,
     {
@@ -46,9 +47,12 @@ vector < vector < int >> findVertical(node * root) {
     }
   }
   vector < vector < int >> ans;
+  
   for (auto p: nodes) {
-    vector < int > col;
+  //Traverse through map    
+      vector < int > col;
     for (auto q: p.second) {
+      //Travese through map of -> level & multinodes 
       col.insert(col.end(), q.second.begin(), q.second.end());
     }
     ans.push_back(col);
