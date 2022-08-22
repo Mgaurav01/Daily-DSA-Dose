@@ -15,6 +15,7 @@ Explanation: Array elements are 4, 2, 1, 5
 print 2. Next of 2 is 1 which is smaller,
 so we print 1. Next of 1 is 5 which is
 greater, so we print -1. Next of 5 is 3
+
 which is smaller, so we print 3.  Note
 that for last element, output is always
 going to be -1 because there is no element
