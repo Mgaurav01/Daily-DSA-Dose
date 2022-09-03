@@ -2,6 +2,7 @@
 https://www.youtube.com/watch?v=63fPPOdIr2c&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=63
 */
 int countSmallerThanEqualToMid(vector<int> & row , int mid){
+  //return the size of length less than mid
     int l = 0 , h = row.size() - 1;
     while(l <= h)
     {
@@ -31,6 +32,7 @@ int Solution::findMedian(vector<vector<int> > &A) {
        int cnt = 0; // <= mid;
        for(int i=0 ; i<n ;i++)
          cnt += countSmallerThanEqualToMid(A[i] , mid);
+        //Since median is the middle elemnt
        if(cnt <= (n*m) /2) low = mid + 1;
        else high = mid - 1;
    }
