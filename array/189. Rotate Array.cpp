@@ -19,3 +19,23 @@ public:
       help_me_to_reverse(nums, 0 , nums.size()-1);
     }
 };
+////////////////////////OR OR OR ???????????????????????????????????
+//use reverse inbuilt function
+
+	void leftRotate(int arr[], int k, int n)
+	{
+	   k = k%n;
+
+    reverse(arr,arr+k);
+
+    reverse(arr+k,arr+n);
+
+    reverse(arr,arr+n);
+	}
+		 
+
+};
+
+
+
+// } Driver Code Ends
